@@ -1,0 +1,99 @@
+<div>
+  <div class="tableContainer">
+
+    <table class="hrCalendar topColumn">
+
+      <tr class="filterHeader">
+        <td class="headcol" colspan="2">First header</td>
+        <td class="headrow" *ngFor="let date of dates">{{ date }}</td>
+      </tr>
+
+
+      <tr class="">
+        <td class="headcol" colspan="2">First header</td>
+        <td *ngFor="let date of dates">{{ date }}</td>
+      </tr>
+
+      <ng-container *ngFor="let room of rooms">
+        <tr class="{{room['class']}}">
+          <td colspan="2" class="headcol">{{ room['name'] }}</td>
+          <td *ngFor="let date of dates">{{ date }}</td>
+        </tr>
+      </ng-container>
+      <ng-container *ngFor="let room of rooms">
+        <tr class="{{room['class']}}">
+          <td colspan="2" class="headcol">{{ room['name'] }}</td>
+          <td *ngFor="let date of dates">{{ date }}</td>
+        </tr>
+      </ng-container>
+      <ng-container *ngFor="let room of rooms">
+        <tr class="{{room['class']}}">
+          <td colspan="2" class="headcol">{{ room['name'] }}</td>
+          <td *ngFor="let date of dates">{{ date }}</td>
+        </tr>
+      </ng-container>
+      <ng-container *ngFor="let room of rooms">
+        <tr class="{{room['class']}}">
+          <td colspan="2" class="headcol">{{ room['name'] }}</td>
+          <td *ngFor="let date of dates">{{ date }}</td>
+        </tr>
+      </ng-container>
+      <ng-container *ngFor="let i of Arr(30).fill(1)">
+        <ng-container *ngFor="let room of rooms">
+          <tr class="{{room['class']}}">
+            <td colspan="2" class="headcol">{{ room['name'] }}</td>
+            <td *ngFor="let date of dates">{{ date }}</td>
+          </tr>
+        </ng-container>
+      </ng-container>
+
+    </table>
+  </div>
+</div>
+
+
+
+
+<style media="screen">
+
+  table {
+    border-collapse:separate;
+    border-top: 1px solid grey;
+    border-spacing: 0;
+  }
+
+  td {
+    margin:0;
+    border: 1px solid grey;
+    border-top-width:0px;
+    white-space:nowrap;
+  }
+
+  div.tableContainer {
+    width: auto;
+    overflow-x:scroll;
+    padding-left:10em;
+    overflow-y:visible;
+    padding-bottom:1px;
+  }
+  .headcol {
+    position:absolute;
+    width:10em;
+    left:0;
+    background: #fafafa;
+    top:auto;
+    box-shadow: 5px 0 8px -5px #888;
+    border-left: 0px none black;
+    border-top-width: 1px; /*only relevant for first row*/
+    margin-top: -1px; /*compensate for top border*/
+  }
+
+
+  .headrow {
+
+  }
+
+  .headcol:after{ }
+  .long { background:yellow; letter-spacing:1em; }
+
+</style>
