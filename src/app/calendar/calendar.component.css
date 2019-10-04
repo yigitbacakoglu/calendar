@@ -1,0 +1,205 @@
+div.fixed {
+  max-width: 100%;
+  max-height: calc(100vh - 30px);
+  overflow: scroll;
+  position: relative;
+  margin: 30px;
+}
+
+table {
+  position: relative;
+  border-collapse: separate;
+}
+
+td, th {
+  padding: 0.25em;
+}
+
+table td, table th {
+  border: 1px solid #dee2e6;
+  background: #fff;
+
+}
+
+thead th {
+  border-bottom: 1px solid #dadada;
+  position: -webkit-sticky; /* for Safari */
+  position: sticky;
+  top: 0px;
+  background: #ececec;
+  min-width: 100px !important;
+}
+
+thead th:first-child {
+  left: 0px;
+  z-index: 1;
+}
+
+tbody th {
+  position: -webkit-sticky; /* for Safari */
+  position: sticky;
+  left: 0px;
+  background: #FFF;
+  border-right: 1px solid #CCC;
+}
+
+.headCol {
+  min-width: 350px !important;
+}
+
+
+
+.rate > .headCol {
+  padding-left: 25px !important;
+}
+
+.rate > .headCol span:before {
+  content: " ";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  top: 0;
+  left: 8px;
+  z-index: 10;
+  background-color: #eaeaea !important;
+}
+
+.rate > .headCol span:after {
+  content: " ";
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  top: 50%;
+  margin-top: -1px;
+  left: 8px;
+  z-index: 10;
+  background-color: #eaeaea !important;
+}
+
+.rate:last-child > .headCol span:before {
+  height: 50%;
+}
+
+
+/* RATE LEVEL 2 */
+.rateLevelTwo:last-child > .headCol span:before {
+  height: 50% !important;
+}
+
+.rateLevelTwo > .headCol span:before {
+  content: " ";
+  position: absolute;
+  width: 2px;
+  height: 50%;
+  top: 0;
+  left: 25px;
+  z-index: 10;
+  background-color: #eaeaea !important;
+}
+
+
+.rateLevelTwo > .headCol span:after {
+  content: " ";
+  position: absolute;
+  width: 7px;
+  height: 2px;
+  top: 50%;
+  margin-top: -1px;
+  left: 25px;
+  z-index: 10;
+  background-color: #eaeaea !important;
+}
+
+.rateLevelTwo > .headCol {
+  padding-left: 35px !important;
+}
+
+/* .rateLevelTwo:last-of-type > .headCol > span:before {
+  height: 50% !important;
+} */
+/* END RATE LEVEL 2 */
+
+.rateLevelTwo td, .rateLevelTwo th {
+  background-color: #cbe9f7 !important;
+}
+
+/* RATE LEVEL 3 */
+
+.rateLevelThree > .headCol span:before {
+  content: " ";
+  position: absolute;
+  width: 2px;
+  height: 50%;
+  top: 0;
+  left: 35px;
+  z-index: 10;
+  background-color: #eaeaea !important;
+}
+
+.rateLevelThree > .headCol span:after {
+  content: " ";
+  position: absolute;
+  width: 7px;
+  height: 2px;
+  top: 50%;
+  margin-top: -1px;
+  left: 35px;
+  z-index: 10;
+  background-color: #eaeaea !important;
+}
+
+.rateLevelThree > .headCol {
+  padding-left: 45px !important;
+}
+
+.rateLevelThree td, .rateLevelThree th {
+  background-color: #fbb584 !important;
+}
+/* END RATE LEVEL 2 */
+
+
+.roomType > .headCol {
+  padding-left: 15px !important;
+}
+
+
+.headCol:before{
+  box-shadow: 5px 0 15px -15px inset;
+  content: " ";
+  height: calc(100% + 1px);
+  position: absolute;
+  top: -1px;
+  right: -4px;
+  width: 4px;
+}
+
+.dateCol:before{
+  box-shadow: 0px 5px 15px -15px inset;
+  content: " ";
+  width: calc(100% + 1px);
+  position: absolute;
+  bottom: -4px;
+  height: 4px;
+  left: 0px;
+}
+
+tr.content-empty td, tr.content-empty th {
+  opacity: 0;
+  min-height: 50px;
+  border: none !important;
+}
+
+
+td {
+  text-align: center;
+}
+
+
+tr.roomType td, tr.roomType th {
+  background-color: #dee2e6;
+}
+
+
+.weekend {
+  background-color: #FCF8E3 !important;
+}

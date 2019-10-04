@@ -8,27 +8,86 @@
     <table class="">
       <thead>
         <tr class="filterHeader">
-          <th class="headCol" colspan="2">First header</th>
-          <th class="dateCol" *ngFor="let date of dates">{{ date }}</th>
+          <th class="headCol text-center" colspan="2"> < << Jan 2021 > >> </th>
+          <th class="text-center dateCol {{ date['weekend'] ? 'weekend' : 'weekday' }}" *ngFor="let date of dates">
+            {{ date['day_name'] }} <br>
+            {{ date['day'] }} <br>
+            {{ date['month_name'] }}
+          </th>
         </tr>
       </thead>
 
-      <tbody>
-        <ng-container *ngFor="let i of Arr(30).fill(1)">
+      <ng-container *ngFor="let i of Arr(30).fill(1)">
+        <tbody>
+          <tr class="content-empty">
+            <th colspan="2" class="headCol"></th>
+            <td *ngFor="let date of dates">-</td>
+          </tr>
           <ng-container *ngFor="let room of rooms">
-            <tr class="{{room['class']}}">
+            <tr class="roomType {{room['class']}}">
               <th colspan="2" class="headCol">{{ room['name'] }}</th>
-              <td *ngFor="let date of dates">{{ date }}</td>
+              <td class="{{ date['weekend'] ? 'weekend' : 'weekday' }}" *ngFor="let date of dates">{{ 1 }}</td>
             </tr>
-          </ng-container>
-        </ng-container>
+            <tr class="rate {{room['class']}}">
+              <th colspan="2" class="headCol"><span></span> {{ room['name'] }}</th>
+              <td class="{{ date['weekend'] ? 'weekend' : 'weekday' }}" *ngFor="let date of dates">€{{ 100 }}</td>
+            </tr>
 
-      </tbody>
+
+            <tr class="rateLevelTwo {{room['class']}}">
+              <th colspan="2" class="headCol"><span></span> {{ room['name'] }}</th>
+              <td class="{{ date['weekend'] ? 'weekend' : 'weekday' }}" *ngFor="let date of dates">€{{ 100 }}</td>
+            </tr>
+
+            <tr class="rateLevelTwo {{room['class']}}">
+              <th colspan="2" class="headCol"><span></span> {{ room['name'] }}</th>
+              <td class="{{ date['weekend'] ? 'weekend' : 'weekday' }}" *ngFor="let date of dates">€{{ 100 }}</td>
+            </tr>
+
+            <tr class="rateLevelThree {{room['class']}}">
+              <th colspan="2" class="headCol"><span></span> {{ room['name'] }}</th>
+              <td class="{{ date['weekend'] ? 'weekend' : 'weekday' }}" *ngFor="let date of dates">€{{ 100 }}</td>
+            </tr>
+            <tr class="rateLevelThree {{room['class']}}">
+              <th colspan="2" class="headCol"><span></span> {{ room['name'] }}</th>
+              <td class="{{ date['weekend'] ? 'weekend' : 'weekday' }}" *ngFor="let date of dates">€{{ 100 }}</td>
+            </tr>
+
+
+            <tr class="rate {{room['class']}}">
+              <th colspan="2" class="headCol"><span></span> {{ room['name'] }}</th>
+              <td class="{{ date['weekend'] ? 'weekend' : 'weekday' }}" *ngFor="let date of dates">€{{ 100 }}</td>
+            </tr>
+            <tr class="rate {{room['class']}}">
+              <th colspan="2" class="headCol"><span></span> {{ room['name'] }}</th>
+              <td class="{{ date['weekend'] ? 'weekend' : 'weekday' }}" *ngFor="let date of dates">€{{ 100 }}</td>
+            </tr>
+            <tr class="rate {{room['class']}}">
+              <th colspan="2" class="headCol"><span></span> {{ room['name'] }}</th>
+              <td class="{{ date['weekend'] ? 'weekend' : 'weekday' }}" *ngFor="let date of dates">€{{ 100 }}</td>
+            </tr>
+            <tr class="rate {{room['class']}}">
+              <th colspan="2" class="headCol"><span></span> {{ room['name'] }}</th>
+              <td class="{{ date['weekend'] ? 'weekend' : 'weekday' }}" *ngFor="let date of dates">€{{ 100 }}</td>
+            </tr>
+            <tr class="rate {{room['class']}}">
+              <th colspan="2" class="headCol"><span></span> {{ room['name'] }}</th>
+              <td class="{{ date['weekend'] ? 'weekend' : 'weekday' }}" *ngFor="let date of dates">€{{ 100 }}</td>
+            </tr>
+            <tr class="rate {{room['class']}}">
+              <th colspan="2" class="headCol"><span></span> {{ room['name'] }}</th>
+              <td class="{{ date['weekend'] ? 'weekend' : 'weekday' }}" *ngFor="let date of dates">€{{ 100 }}</td>
+            </tr>
+
+          </ng-container>
+        </tbody>
+
+      </ng-container>
+
 
     </table>
   </div>
 </div>
-
 
 
 <!--
@@ -66,73 +125,3 @@ margin-top: -1px; /*compensate for top border*/
 .headCol:after{ }
 .long { background:yellow; letter-spacing:1em; }
 -->
-
-<style media="screen">
-
-  div.fixed {
-    max-width: 100%;
-    max-height: calc(100vh - 30px);
-    overflow: scroll;
-    position: relative;
-    margin-top:-1px;
-  }
-
-  table {
-    position: relative;
-    border-collapse: collapse;
-  }
-
-  td, th {
-    padding: 0.25em;
-  }
-
-  table td, table th {
-    border: 1px solid #dee2e6;
-  }
-
-  thead th {
-    border-bottom: 1px solid #dadada;
-    position: -webkit-sticky; /* for Safari */
-    position: sticky;
-    top: -1px;
-    background: #dadada;
-    min-width: 100px !important;
-  }
-
-  thead th:first-child {
-    left: -1px;
-    z-index: 1;
-  }
-
-  tbody th {
-    position: -webkit-sticky; /* for Safari */
-    position: sticky;
-    left: -1px;
-    background: #FFF;
-    border-right: 1px solid #CCC;
-  }
-
-  .headCol {
-    min-width: 250px !important;
-  }
-
-  .headCol:before{
-    box-shadow: 5px 0 15px -15px inset;
-    content: " ";
-    height: calc(100% + 1px);
-    position: absolute;
-    top: -1px;
-    right: -4px;
-    width: 4px;  }
-
-    .dateCol:before{
-      box-shadow: 0px 5px 15px -15px inset;
-      content: " ";
-      width: calc(100% + 1px);
-      position: absolute;
-      bottom: -4px;
-      height: 4px;
-      left: 0px;
-    }
-
-  </style>
